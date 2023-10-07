@@ -39,3 +39,5 @@ After that you should open `automate.py` and change the 8th line to:
 ```python
 filename = sys.argv[1] + ".cpp__tests"
 ```
+
+Put `automate.py` to any dir and change `automate.sublime-build`.
