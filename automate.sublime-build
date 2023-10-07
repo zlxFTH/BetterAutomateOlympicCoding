@@ -1,13 +1,5 @@
 {
-    "cmd": ["python", "automate.py", "$file_name"],
+    "cmd": ["python", "/home/zlxfth/automate.py", "$file_base_name", "$file_path"],
     "selector": "source.c++",
     "file_regex": "^\\s*File \"(...*?)\", line ([0-9]*)",
-
-    "variants": 
-	[ 
-		{ 
-			"name": "Contest", 
-			"cmd": ["python", "contest.py"]
-		}	
-	]
 }
