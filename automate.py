@@ -81,17 +81,23 @@ elif path.find("atcoder") != -1:
   res = []
   out = []
 
-  x = soup.find_all('pre')
+  x = soup.find_all('div', attrs = {'class' : 'part'})
   id = 0
-  for y in x:
-    if len(y.contents) == 1:
-      s = y.text.strip()
-      s = s.replace('\r', '')
-      if id % 2 == 0:
-        res.append(s + "\n")
-      else:
-        out.append(s)
-      id += 1
+  for z in x:
+    w = z.find_all('pre')
+    ok = False
+    for y in w:
+      if len(y.contents) == 1:
+        s = y.text.strip()
+        s = s.replace('\r', '')
+        if id % 2 == 0:
+          res.append(s + "\n")
+        else:
+          out.append(s)
+        id += 1
+        ok = True
+      if ok == True:
+        break
 
   res = np.resize(res, id // 4)
   out = np.resize(out, id // 4)
